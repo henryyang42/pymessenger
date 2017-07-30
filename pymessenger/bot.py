@@ -81,8 +81,7 @@ class Bot:
         multipart_header = {
             'Content-Type': multipart_data.content_type
         }
-        return requests.post('{}/me/messages?access_token='.format(self.graph_url, 
-                                                                   self.access_token), 
+        return requests.post('{}/me/messages'.format(self.graph_url), 
                              data=multipart_data,
                              params=self.auth_args, 
                              headers=multipart_header).json()
